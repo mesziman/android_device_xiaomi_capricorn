@@ -17,8 +17,10 @@
 # call the proprietary setup
 $(call inherit-product, vendor/xiaomi/capricorn/capricorn-vendor.mk)
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+# Local overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -33,9 +35,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.target.rc
 
-# Fingerprint
+# FlipFlap
 PRODUCT_PACKAGES += \
-    QfpListener
+    FlipFlap
 
 # Input
 PRODUCT_COPY_FILES += \
